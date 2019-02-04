@@ -96,7 +96,7 @@ $(function() {
 
          it('feed has an entry', function(done) {
              const newsList = document.querySelector('.feed');
-             expect(newsList.children.length).not.toBe(0);             
+             expect(newsList.children.length).not.toBe(0);
              done();
          });
     });
@@ -112,11 +112,13 @@ $(function() {
          let feedB;
 
          beforeEach(function(done) {
-             loadFeed(0);
-             feedA = newsList.innerHTML;
-             loadFeed(1);
-             feedB = newsList.innerHTML;
-             done();
+             loadFeed(0, function() {
+               feedA = newsList.innerHTML;
+               done();
+             });
+             loadFeed(1, function() {
+               feedB = newsList.innerHTML;
+             });             
          });
 
          it('changes content when news feed is loaded', function(done) {
