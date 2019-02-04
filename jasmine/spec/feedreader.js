@@ -91,14 +91,15 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-             done();
-
-         });
-
-         it('', function() {
+             loadFeed(0);
              done();
          });
 
+         it('feed has an entry', function(done) {
+             const newsList = document.querySelector('.feed');
+             expect(newsList).not.toBeNull();
+             done();
+         });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
@@ -109,7 +110,6 @@ $(function() {
          */
          beforeEach(function(done) {
              done();
-
          });
 
          it('', function() {
