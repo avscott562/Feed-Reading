@@ -108,11 +108,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         const newsList = document.querySelector('.feed');
+         let feedA;
+         let feedB;
+
          beforeEach(function(done) {
+             loadFeed(0);
+             feedA = newsList.innerHTML;
+             loadFeed(1);
+             feedB = newsList.innerHTML;
              done();
          });
 
-         it('', function() {
+         it('changes content when news feed is loaded', function(done) {
+             expect(feedA !== feedB).toBe(true);
              done();
          });
     });
