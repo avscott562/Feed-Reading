@@ -91,13 +91,12 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach(function(done) {
-             loadFeed(0);
-             done();
+             loadFeed(0, done);
          });
 
          it('feed has an entry', function(done) {
              const newsList = document.querySelector('.feed');
-             expect(newsList).not.toBeNull();
+             expect(newsList.children.length).not.toBe(0);             
              done();
          });
     });
