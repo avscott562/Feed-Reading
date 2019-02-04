@@ -24,6 +24,12 @@ $(function() {
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
+            allFeeds.forEach(function(feed) {
+              const feedUrl = feed.url;
+              expect(feedUrl).toBeDefined();
+              expect(feedUrl.length).not.toBe(0);
+
+            })
         });
 
 
