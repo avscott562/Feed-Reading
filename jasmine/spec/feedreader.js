@@ -61,9 +61,10 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+         const body = document.querySelectorAll('body');
+
          it('menu is hidden initially', function() {
-            const body = document.querySelectorAll('body');
-            expect(body[0]).toHaveClass('menu-hidden');
+             expect(body[0]).toHaveClass('menu-hidden');
          });
 
          /* TODO: Write a test that ensures the menu changes
@@ -72,9 +73,13 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it('menu toggles when prompted', function() {
-
+              const menuIcon = document.querySelector('.menu-icon-link');
+              expect(body[0]).toHaveClass('menu-hidden');
+              menuIcon.click();
+              expect(body[0]).not.toHaveClass('menu-hidden');
+              menuIcon.click();
+              expect(body[0]).toHaveClass('menu-hidden');
           });
-
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
