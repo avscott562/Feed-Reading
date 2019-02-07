@@ -105,7 +105,7 @@ $(function() {
 
          /* compare feeds to see if they are the different */
          it('changes content when news feed is loaded', function(done) {
-             expect(feedA !== feedB).toBe(true);
+             expect(feedA).not.toEqual(feedB);
              done();
          });
     });
