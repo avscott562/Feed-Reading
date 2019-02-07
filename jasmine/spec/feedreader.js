@@ -78,9 +78,9 @@ $(function() {
          });
 
          it('feed has an entry', function(done) {
-             const newsList = document.querySelector('.feed');
+             const newsEntry = document.querySelector('.feed .entry');
              /* checks to see if feed has entries after loading */
-             expect(newsList.children.length).not.toBe(0);
+             expect(newsEntry.length).not.toBe(0);
              done();
          });
     });
