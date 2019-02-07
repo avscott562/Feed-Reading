@@ -96,10 +96,10 @@ $(function() {
          beforeEach(function(done) {
              loadFeed(0, function() {
                feedA = newsList.innerHTML;
+               loadFeed(1, function() {
+                 feedB = newsList.innerHTML;
+               });
                done();
-             });
-             loadFeed(1, function() {
-               feedB = newsList.innerHTML;
              });
          });
 
